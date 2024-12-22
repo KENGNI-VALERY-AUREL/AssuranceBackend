@@ -38,13 +38,13 @@ public class SouscriptionController {
 
     }
 
-    @DeleteMapping("/id/{id}")
+    @DeleteMapping("/del_id/{id}")
     public ResponseEntity<?> deletesousById (@PathVariable("id") Integer id){
         souscriptionService.deleteSouscriptionById(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    @PutMapping("/id/{id}")
+    @PutMapping("/put_id/{id}")
     public ResponseEntity<SouscriptionResDto> updatesosuById(@PathVariable("id") Integer id, @RequestBody SouscriptionReqDto souscriptionReqDto) {
         SouscriptionResDto souscriptionResDto = souscriptionService.updateSouscription(souscriptionReqDto,id);
         return new ResponseEntity<>(souscriptionResDto, HttpStatus.OK);

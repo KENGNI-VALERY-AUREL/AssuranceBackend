@@ -40,13 +40,13 @@ public class ProduitController {
     }
 
 
-    @DeleteMapping("/id/{id}")
+    @DeleteMapping("/del_id/{id}")
     public ResponseEntity<?> deleteproduitById(@PathVariable("id") Integer id){
         produitService.deleteProduit(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    @PutMapping("/id/{id}")
+    @PutMapping("/put_id/{id}")
     public ResponseEntity<ProduitResDto> updateproduitById(@PathVariable("id") Integer id, @RequestBody ProduitReqDto produitReqDto){
         ProduitResDto produitResDto = produitService.updateProduit(produitReqDto, id);
         return new ResponseEntity<>(produitResDto, HttpStatus.OK);
